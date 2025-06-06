@@ -1,119 +1,161 @@
 * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      margin: 0;
-      font-family: sans-serif;
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-      background-color: #121212;
-      color: white;
-    }
+body {
+  margin: 0;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #121212;
+  color: white;
+}
 
-    .builder-container {
-      display: flex;
-      flex: 1;
-      overflow: hidden;
-    }
+.builder-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
 
-    .sidebar {
-      width: 20%;
-      padding: 1rem;
-      background-color: #000;
-      border-right: 1px solid #444;
-    }
+.sidebar {
+  width: 20%;
+  padding: 1rem;
+  background-color: #000;
+  border-right: 1px solid #444;
+}
 
-    .sidebar h2 {
-      margin-top: 0;
-      color: white;
-    }
+.sidebar h2 {
+  margin-top: 0;
+  color: white;
+}
 
-    .element {
-      padding: 10px;
-      margin: 10px 0;
-      background-color: #222;
-      color: white;
-      border: 1px solid #555;
-      cursor: grab;
-      text-align: center;
-      border-radius: 5px;
-    }
+.element {
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #222;
+  color: white;
+  border: 1px solid #555;
+  cursor: grab;
+  text-align: center;
+  border-radius: 5px;
+  user-select: none;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
 
-    .canvas {
-      flex: 1;
-      padding: 1rem;
-      background-color: #121212;
-      color: white;
-      position: relative;
-      overflow: auto;
-    }
+.element:active,
+.element:hover {
+  background-color: #007bff;
+  border-color: #0056b3;
+  color: white;
+}
 
-    .canvas .placeholder {
-      color: #888;
-      text-align: center;
-      margin-top: 50px;
-    }
+.canvas {
+  flex: 1;
+  padding: 1rem;
+  background-color: #121212;
+  color: white;
+  position: relative;
+  overflow: auto;
+  min-height: 400px;
+}
 
-    .properties {
-      width: 25%;
-      padding: 1rem;
-      background-color: #000;
-      border-left: 1px solid #444;
-      color: white;
-    }
+.canvas .placeholder {
+  color: #888;
+  text-align: center;
+  margin-top: 50px;
+  user-select: none;
+}
 
-    .properties h2 {
-      color: white;
-    }
+.properties {
+  width: 25%;
+  padding: 1rem;
+  background-color: #000;
+  border-left: 1px solid #444;
+  color: white;
+}
 
-    form input,
-    form textarea {
-      width: 100%;
-      padding: 0.5rem;
-      margin-bottom: 10px;
-      background-color: #222;
-      color: white;
-      border: 1px solid #555;
-      border-radius: 4px;
-    }
+.properties h2 {
+  color: white;
+  margin-bottom: 1rem;
+}
 
-    #dynamic-fields {
-      color: white;
-    }
+form label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
 
-    form button {
-      padding: 10px;
-      width: 100%;
-      background: #007bff;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 4px;
-    }
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 10px;
+  background-color: #222;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 4px;
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
 
-    .editable {
-      border: 1px dashed transparent;
-    }
+form input:focus,
+form textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
 
-    .editable.selected {
-      border: 1px dashed #007bff;
-    }
+#dynamic-fields {
+  color: white;
+}
 
-    @media (max-width: 768px) {
-      .builder-container {
-        flex-direction: column;
-      }
+form button {
+  padding: 10px;
+  width: 100%;
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
 
-      .sidebar{
-        width: 100%;
-        border: none;
-      }
-      .properties {
-        width: 100%;
-        border: none;
-      }
-    }
+form button:hover {
+  background-color: #0056b3;
+}
+
+.editable {
+  border: 1px dashed transparent;
+  margin: 5px 0;
+  max-width: 100%;
+  word-break: break-word;
+}
+
+.editable.selected {
+  border: 1px dashed #007bff;
+  background-color: #1a2a54;
+}
+
+@media (max-width: 768px) {
+  .builder-container {
+    flex-direction: column;
+  }
+
+  .sidebar,
+  .properties {
+    width: 100%;
+    border: none;
+  }
+
+  .sidebar {
+    padding: 0.5rem 1rem;
+  }
+
+  .properties {
+    padding: 1rem;
+  }
+}
