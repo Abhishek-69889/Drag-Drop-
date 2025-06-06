@@ -1,0 +1,119 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      background-color: #121212;
+      color: white;
+    }
+
+    .builder-container {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .sidebar {
+      width: 20%;
+      padding: 1rem;
+      background-color: #000;
+      border-right: 1px solid #444;
+    }
+
+    .sidebar h2 {
+      margin-top: 0;
+      color: white;
+    }
+
+    .element {
+      padding: 10px;
+      margin: 10px 0;
+      background-color: #222;
+      color: white;
+      border: 1px solid #555;
+      cursor: grab;
+      text-align: center;
+      border-radius: 5px;
+    }
+
+    .canvas {
+      flex: 1;
+      padding: 1rem;
+      background-color: #121212;
+      color: white;
+      position: relative;
+      overflow: auto;
+    }
+
+    .canvas .placeholder {
+      color: #888;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .properties {
+      width: 25%;
+      padding: 1rem;
+      background-color: #000;
+      border-left: 1px solid #444;
+      color: white;
+    }
+
+    .properties h2 {
+      color: white;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 10px;
+      background-color: #222;
+      color: white;
+      border: 1px solid #555;
+      border-radius: 4px;
+    }
+
+    #dynamic-fields {
+      color: white;
+    }
+
+    form button {
+      padding: 10px;
+      width: 100%;
+      background: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .editable {
+      border: 1px dashed transparent;
+    }
+
+    .editable.selected {
+      border: 1px dashed #007bff;
+    }
+
+    @media (max-width: 768px) {
+      .builder-container {
+        flex-direction: column;
+      }
+
+      .sidebar{
+        width: 100%;
+        border: none;
+      }
+      .properties {
+        width: 100%;
+        border: none;
+      }
+    }
