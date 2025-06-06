@@ -75,8 +75,6 @@ body {
   background-color: #000;
   border-left: 1px solid #444;
   color: white;
-
-  /* Added for mobile scroll fix */
   max-height: 40vh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -88,7 +86,7 @@ body {
 }
 
 form {
-  padding-bottom: 20px; /* extra space to keep button visible */
+  padding-bottom: 20px; 
 }
 
 form label {
@@ -166,8 +164,6 @@ form button:hover {
 
   .properties {
     padding: 1rem;
-
-    /* override max-height on mobile for better flexibility */
     max-height: 50vh;
   }
 }
